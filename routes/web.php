@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 //Student Route
 Route::get('student', 'StudentController@showForm');
 Route::post('student-add', 'StudentController@insertStudent');
-//
+//Student data show Route
 Route::get('student-all', 'StudentController@allStudent');
+//Single student data show Route
+Route::get('student-single/{id}', 'StudentController@singleStudent');
 
 

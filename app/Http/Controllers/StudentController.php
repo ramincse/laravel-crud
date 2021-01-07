@@ -65,4 +65,15 @@ class StudentController extends Controller
     	return view('student.all', compact('all_students'));
     }
 
+    /**
+     * Single student data show
+     */
+    public function singleStudent($id)
+    {
+    	$student = Student::find($id);
+    	return view('student.show', [
+    		'single_student' => $student,
+    	]);
+    }
+
 } //End of class StudentController extends Controller

@@ -138,3 +138,29 @@ public function allStudent()
 ```php
 <input name="uname" class="form-control" type="text" value="{{ old('uname') }}">
 ```
+### Show Single Data
+```php
+//Single student data show Route
+Route::get('student-single/{id}', 'StudentController@singleStudent');
+//Button
+@foreach ( $all_students as $student )
+	<tr>
+		<td>
+			<a class="btn btn-sm btn-info" href="{{ url('student-single/' . $student -> id) }}">View</a>
+		</td>
+	</tr>
+@endforeach
+/**
+ * StudentController
+ */
+public function singleStudent($id)
+{
+	$student = Student::find($id);
+	return view('student.show', [
+		'single_student' => $student,
+	]);
+}
+//Data Show
+<td>{{ $single_student -> name }}</td>
+<img class="shadow" style="width: 200px; height: 200px; display: block; margin: auto; border-radius: 50%; border: 10px solid #fff;" src="{{ URL::to('/') }}/media/students/{{ $single_student -> photo }}" alt="">
+```
