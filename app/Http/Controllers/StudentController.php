@@ -52,4 +52,17 @@ class StudentController extends Controller
         ]);
         return redirect() -> back() -> with('success', 'Student added successfull');
     }
-}
+
+    /**
+     * Show All Students
+     */
+    public function allStudent()
+    {
+    	$all_students = Student::latest() -> get(); // all() for ASC
+    	// return view('student.all', [
+    	// 	'students' => $all_students,
+    	// ]);
+    	return view('student.all', compact('all_students'));
+    }
+
+} //End of class StudentController extends Controller

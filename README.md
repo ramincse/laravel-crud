@@ -90,7 +90,7 @@ return redirect() -> back() -> with('success', 'Student added successfull');
 	<p class="alert alert-success">{{ Session::get('success') }} !<button class="close" data-dismiss="alert">&times;</button></p>
 @endif
 ```
-### Photo Upload System
+### Photo Uploading System
 ```php
 // <input name="photo" class="form-control" type="file"> At form
 
@@ -110,4 +110,27 @@ Student::create([
     'photo' => $photo_name,
 ]);
 return redirect() -> back() -> with('success', 'Student added successfull');
+```
+### Data show
+```php
+/**
+ * At StudentController.php page
+ */
+public function allStudent()
+{
+	$all_students = Student::latest() -> get();
+	return view('student.all', compact('all_students'));
+}
+/**
+ * At data.blade.php page
+ */
+@foreach ( $all_students as $student )
+	<tr>
+		<td>{{ $loop -> index + 1 }}</td>
+		<td>{{ $student -> name }}</td>
+		<td>{{ $student -> email }}</td>
+		<td>{{ $student -> cell }}</td>
+		<td><img src="{{ URL::to('media/students') . '/' . $student -> photo }}" alt=""></td>
+	</tr>
+@endforeach
 ```
