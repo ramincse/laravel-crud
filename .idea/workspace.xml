@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f36aa92c-817f-4b11-85c0-2ce55ab740fd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/crud/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crud/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_06_103949_create_cruds_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_06_103949_create_cruds_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/fonts/UbuntuCondensed-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/media/img/pp_photo/82e2ae94.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/media/img/pp_photo/istockphoto-615279718-612x612.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/media/img/pp_photo/photo-1470129360498-ab39dc4e05d6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/media/img/pp_photo/photo-1479659929431-4342107adfc1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/crud/assets/sass/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/crud/all.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/crud/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +177,7 @@
       <workItem from="1609726820743" duration="8262000" />
       <workItem from="1609927802449" duration="199000" />
       <workItem from="1609928011239" duration="4939000" />
-      <workItem from="1609985920103" duration="299000" />
+      <workItem from="1609985920103" duration="2252000" />
     </task>
     <servers />
   </component>

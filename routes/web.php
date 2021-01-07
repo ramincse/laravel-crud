@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('crud-app', 'CrudController@showForm');
-Route::get('crud-all', 'CrudController@showDataPage');
+Route::get('student', 'StudentController@showForm');
+Route::get('student-all', 'StudentController@showDataPage');
 
-Route::post('crud-add', 'CrudController@createCrudData');
+Route::post('student-add', 'StudentController@insertStudent');

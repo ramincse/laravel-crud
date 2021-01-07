@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Development Area</title>
 	<!-- ALL CSS FILES  -->
-	<link rel="stylesheet" href="crud/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="crud/assets/css/style.css">
-	<link rel="stylesheet" href="crud/assets/css/responsive.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
 
 
 
 	<div class="wrap ">
-        <a class="btn btn-sm btn-primary" href="{{ url('crud-all') }}">All students</a>
+        <a class="btn btn-sm btn-primary" href="{{ url('student-all') }}">All students</a>
 		<div class="card shadow">
 			<div class="card-body">
 				<h2>Add new student</h2>
@@ -21,7 +21,7 @@
 					<p class="alert alert-danger">{{ $errors -> first() }} !<button class="close" data-dismiss="alert">&times;</button></p>
 				@endif
 				
-				<form action="{{ url('crud-add') }}" method="POST" enctype="multipart/form-data">
+				<form action="{{ url('student-add') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 					<div class="form-group">
 						<label for="">Name</label>
@@ -41,7 +41,7 @@
 					</div>
                     <div class="form-group">
                         <label for="">Photo</label>
-                        <input name="photo" type="file">
+                        <input name="photo" class="form-control" type="file">
                     </div>
 					<div class="form-group">
 						<input class="btn btn-primary" type="submit" value="Add student">
@@ -59,9 +59,9 @@
 
 
 	<!-- JS FILES  -->
-	<script src="crud/assets/js/jquery-3.4.1.min.js"></script>
-	<script src="crud/assets/js/popper.min.js"></script>
-	<script src="crud/assets/js/bootstrap.min.js"></script>
-	<script src="crud/assets/js/custom.js"></script>
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/custom.js"></script>
 </body>
 </html>
