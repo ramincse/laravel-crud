@@ -76,4 +76,14 @@ class StudentController extends Controller
     	]);
     }
 
+    /**
+     * Delete single student data
+     */
+    public function deleteStudent($id)
+    {
+    	$delete_student = Student::find($id);
+    	$delete_student -> delete();
+    	return redirect() -> back() -> with('success', 'Student data deleted successfull');
+    }
+
 } //End of class StudentController extends Controller

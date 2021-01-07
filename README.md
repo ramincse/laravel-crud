@@ -164,3 +164,21 @@ public function singleStudent($id)
 <td>{{ $single_student -> name }}</td>
 <img class="shadow" style="width: 200px; height: 200px; display: block; margin: auto; border-radius: 50%; border: 10px solid #fff;" src="{{ URL::to('/') }}/media/students/{{ $single_student -> photo }}" alt="">
 ```
+### Delete Single Student Data
+```php
+//Delete Route
+Route::get('student-delete/{id}', 'StudentController@deleteStudent');
+//Button
+@foreach ( $all_students as $student )
+	{{ url('student-delete/' . $student -> id) }}
+@endforeach
+/**
+ * StudentController
+ */
+public function deleteStudent($id)
+{
+	$delete_student = Student::find($id);
+	$delete_student -> delete();
+	return redirect() -> back() -> with('success', 'Student data deleted successfull');
+}
+```

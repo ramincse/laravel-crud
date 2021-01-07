@@ -24,5 +24,7 @@ Route::post('student-add', 'StudentController@insertStudent');
 Route::get('student-all', 'StudentController@allStudent');
 //Single student data show Route
 Route::get('student-single/{id}', 'StudentController@singleStudent');
+//Delete Single student data Route
+Route::get('student-delete/{id}', 'StudentController@deleteStudent');
 
 

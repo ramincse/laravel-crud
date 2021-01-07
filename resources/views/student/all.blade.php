@@ -38,7 +38,7 @@
 							<td>
 								<a class="btn btn-sm btn-info" href="{{ url('student-single/' . $student -> id) }}">View</a>
 								<a class="btn btn-sm btn-warning" href="#">Edit</a>
-								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+								<a class="btn btn-sm btn-danger" href="{{ url('student-delete/' . $student -> id) }}">Delete</a>
 							</td>
 						</tr>
 						@endforeach
