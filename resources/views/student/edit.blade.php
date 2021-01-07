@@ -22,6 +22,7 @@
 				
 				<form action="{{ url('student-update/' . $edit_student -> id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
 					<div class="form-group">
 						<label for="">Name</label>
 						<input name="name" class="form-control" type="text" value="{{ $edit_student -> name }}">

@@ -38,7 +38,11 @@
 							<td>
 								<a class="btn btn-sm btn-info" href="{{ url('student-single/' . $student -> id) }}">View</a>
 								<a class="btn btn-sm btn-warning" href="{{ url('student-edit/' . $student -> id) }}">Edit</a>
-								<a class="btn btn-sm btn-danger" href="{{ url('student-delete/' . $student -> id) }}">Delete</a>
+								<form style="display: inline-block;" action="{{ url('student-delete/' . $student -> id) }}" method="POST">
+									@csrf
+									@method('DELETE')
+									<button class="btn btn-sm btn-danger">Delete</button>
+								</form>
 							</td>
 						</tr>
 						@endforeach

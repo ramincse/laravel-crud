@@ -25,8 +25,8 @@ Route::get('student-all', 'StudentController@allStudent');
 //Single student data show Route
 Route::get('student-single/{id}', 'StudentController@singleStudent');
 //Delete Single student data Route
-Route::get('student-delete/{id}', 'StudentController@deleteStudent');
+Route::delete('student-delete/{id}', 'StudentController@deleteStudent');
 //Edit Single student data Route
 Route::get('student-edit/{id}', 'StudentController@editStudent');
-Route::post('student-update/{id}', 'StudentController@updateStudent');
+Route::put('student-update/{id}', 'StudentController@updateStudent');
 

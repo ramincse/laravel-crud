@@ -50,7 +50,7 @@ class StudentController extends Controller
             'uname' => $request -> uname,
             'photo' => $photo_name,
         ]);
-        return redirect() -> with('success', 'Student added successfull');
+        return redirect() -> back() -> with('success', 'Student added successfull');
     }
 
     /**
@@ -83,6 +83,7 @@ class StudentController extends Controller
     {
     	$delete_student = Student::find($id);
     	$delete_student -> delete();
+    	unlink('media/students/' . $delete_student -> photo);
     	return redirect() -> back() -> with('success', 'Student data deleted successfull');
     }
 
