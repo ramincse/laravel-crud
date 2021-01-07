@@ -77,12 +77,11 @@ Student::create([
     'uname' => $request -> uname,
     //'photo' => $val -> photo,
 ]);
+return redirect() -> back() -> with('success', 'Student added successfull');
 
 /**
  * At validation.blade.php page
  */
-return redirect() -> back() -> with('success', 'Student added successfull');
-
 @if( $errors -> any() )
     <p class="alert alert-danger">{{ $errors -> first() }} !<button class="close" data-dismiss="alert">&times;</button></p>
 @endif
@@ -90,4 +89,25 @@ return redirect() -> back() -> with('success', 'Student added successfull');
 @if ( Session::has('success') )
 	<p class="alert alert-success">{{ Session::get('success') }} !<button class="close" data-dismiss="alert">&times;</button></p>
 @endif
+```
+### Photo Upload System
+```php
+// <input name="photo" class="form-control" type="file"> At form
+
+/**
+ * At StudentController.php page
+ */
+if ( $request -> hasFile('photo') ) {
+	$image = $request -> file('photo');
+    //Photo Unique Name
+    $photo_name = md5( time() . rand() ) . '.' . $image -> getClientOriginalExtension();
+    $image -> move( public_path('media/students/'), $photo_name);
+}else{
+	$photo_name = '';
+}
+//Sent to Table
+Student::create([
+    'photo' => $photo_name,
+]);
+return redirect() -> back() -> with('success', 'Student added successfull');
 ```

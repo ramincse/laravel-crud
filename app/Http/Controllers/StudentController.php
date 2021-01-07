@@ -17,6 +17,7 @@ class StudentController extends Controller
     }
 
     public function insertStudent(Request $request){
+
         //Validation
         $this -> validate($request, [
             'name'  => 'required',
@@ -24,6 +25,18 @@ class StudentController extends Controller
             'uname' => 'required | min:6 | max:10 | unique:students',
             'cell'  => 'required | unique:students',
         ]);
+
+        /**
+    	 * Photo Upload System
+    	 */
+        if ( $request -> hasFile('photo') ) {
+        	$image = $request -> file('photo');
+	        //Photo Unique Name
+	        $photo_name = md5( time() . rand() ) . '.' . $image -> getClientOriginalExtension();
+	        $image -> move( public_path('media/students/'), $photo_name);
+        }else{
+        	$photo_name = '';
+        }
 
         /**
          * Student Data sent to Table , [
@@ -35,7 +48,7 @@ class StudentController extends Controller
             'email' => $request -> email,
             'cell'  => $request -> cell,
             'uname' => $request -> uname,
-            //'photo' => $val -> photo,
+            'photo' => $photo_name,
         ]);
         return redirect() -> back() -> with('success', 'Student added successfull');
     }
