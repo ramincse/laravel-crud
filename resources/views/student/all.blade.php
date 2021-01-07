@@ -15,6 +15,7 @@
 		<div class="card shadow">
 			<div class="card-body">
 				<h2>All Data</h2>
+				@include('validation')
 				<table class="table table-striped">
 					<thead>
 						<tr>

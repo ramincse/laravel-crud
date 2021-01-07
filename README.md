@@ -109,7 +109,7 @@ if ( $request -> hasFile('photo') ) {
 Student::create([
     'photo' => $photo_name,
 ]);
-return redirect() -> back() -> with('success', 'Student added successfull');
+return redirect('student-all') -> back() -> with('success', 'Student added successfull');
 ```
 ### Data show
 ```php
@@ -133,4 +133,8 @@ public function allStudent()
 		<td><img src="{{ URL::to('media/students') . '/' . $student -> photo }}" alt=""></td>
 	</tr>
 @endforeach
+```
+### Show value at form by old function
+```php
+<input name="uname" class="form-control" type="text" value="{{ old('uname') }}">
 ```
