@@ -17,9 +17,8 @@
 		<div class="card shadow">
 			<div class="card-body">
 				<h2>Add new student</h2>
-				@if( $errors -> any() )					
-					<p class="alert alert-danger">{{ $errors -> first() }} !<button class="close" data-dismiss="alert">&times;</button></p>
-				@endif
+				
+				@include('validation')
 				
 				<form action="{{ url('student-add') }}" method="POST" enctype="multipart/form-data">
                     @csrf

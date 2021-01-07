@@ -59,3 +59,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Flash message
+```php
+/**
+ * Flash message Show at index.blade.php page
+ */
+@include('validation')
+
+/**
+ * Data insert at StudentController.php page
+ */
+Student::create([
+    'name'  => $request -> name,
+    'email' => $request -> email,
+    'cell'  => $request -> cell,
+    'uname' => $request -> uname,
+    //'photo' => $val -> photo,
+]);
+
+/**
+ * At validation.blade.php page
+ */
+return redirect() -> back() -> with('success', 'Student added successfull');
+
+@if( $errors -> any() )
+    <p class="alert alert-danger">{{ $errors -> first() }} !<button class="close" data-dismiss="alert">&times;</button></p>
+@endif
+
+@if ( Session::has('success') )
+	<p class="alert alert-success">{{ Session::get('success') }} !<button class="close" data-dismiss="alert">&times;</button></p>
+@endif
+```

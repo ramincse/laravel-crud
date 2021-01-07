@@ -37,6 +37,6 @@ class StudentController extends Controller
             'uname' => $request -> uname,
             //'photo' => $val -> photo,
         ]);
-        return redirect() -> back();
+        return redirect() -> back() -> with('success', 'Student added successfull');
     }
 }
