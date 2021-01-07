@@ -20,7 +20,7 @@
 				
 				@include('validation')
 				
-				<form action="{{ url('student-add') }}" method="POST" enctype="multipart/form-data">
+				<form action="{{ url('student-update/' . $edit_student -> id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 					<div class="form-group">
 						<label for="">Name</label>

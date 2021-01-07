@@ -96,4 +96,31 @@ class StudentController extends Controller
     		'edit_student' => $edit_student,
     	]);
     }
+
+    /**
+     * Update Single Student
+     */
+    public function updateStudent(Request $update, $id)
+    {
+    	$update_data = Student::find($id);
+
+    	if ( $update -> hasFile('new_photo') ) {
+    		$image = $update -> file('new_photo');
+	        //Photo Unique Name
+	        $photo_name = md5( time() . rand() ) . '.' . $image -> getClientOriginalExtension();
+	        $image -> move( public_path('media/students/'), $photo_name);
+	        unlink('media/students/' . $update -> old_photo);
+    	}else{
+    		$photo_name = $update -> new_photo;
+    	}
+
+    	$update_data -> name = $update -> name;
+    	$update_data -> email = $update -> email;
+    	$update_data -> cell = $update -> cell;
+    	$update_data -> uname = $update -> uname;
+    	$update_data -> photo = $photo_name;
+    	//Data Update
+    	$update_data -> update();
+    	return redirect() -> back() -> with('success', 'Student data updated successfull');
+    }
 } //End of class StudentController extends Controller

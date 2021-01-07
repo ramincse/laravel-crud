@@ -28,4 +28,5 @@ Route::get('student-single/{id}', 'StudentController@singleStudent');
 Route::get('student-delete/{id}', 'StudentController@deleteStudent');
 //Edit Single student data Route
 Route::get('student-edit/{id}', 'StudentController@editStudent');
+Route::post('student-update/{id}', 'StudentController@updateStudent');
 
