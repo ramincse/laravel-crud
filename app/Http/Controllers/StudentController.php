@@ -86,4 +86,14 @@ class StudentController extends Controller
     	return redirect() -> back() -> with('success', 'Student data deleted successfull');
     }
 
+    /**
+     * Edit Student Data
+     */
+    public function editStudent($id)
+    {
+    	$edit_student = Student::find($id);
+    	return view('student.edit', [
+    		'edit_student' => $edit_student,
+    	]);
+    }
 } //End of class StudentController extends Controller
