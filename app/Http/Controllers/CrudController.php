@@ -18,10 +18,23 @@ class CrudController extends Controller
     }
 
     public function createCrudData(Request $val){
+        //Validation
+        $this -> validate($val, [
+            'name'  => 'required',
+            'email' => 'required | unique:cruds',
+            'uname' => 'required | min:6 | max:10 | unique:cruds',
+            'cell'  => 'required | unique:cruds',
+        ], [
+            'name.required'  => 'Apnar naam nei',
+        ]);
+
+        /**
+         * Data sent to Table
+         */
         Crud::create([
-            'name' => $val -> name,
+            'name'  => $val -> name,
             'email' => $val -> email,
-            'cell' => $val -> cell,
+            'cell'  => $val -> cell,
             'uname' => $val -> uname,
             //'photo' => $val -> photo,
         ]);
